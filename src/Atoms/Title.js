@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function Component({ value, onChange }) {
   const [isActive, toggleActive] = useState(false);
+  const inputForm = useRef(null);
+
+  useEffect(() => {
+    if (isActive) inputForm.current.focus();
+  }, [isActive]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -14,6 +19,7 @@ function Component({ value, onChange }) {
         <form onSubmit={e => handleSubmit(e)}>
           <input
             type="text"
+            ref={inputForm}
             style={{ fontSize: fontSize, width: "100%" }}
             value={value}
             onChange={e => onChange(e.target.value)}
