@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
-function Component({ update, children }) {
-  const [comment, setComment] = useState(children);
+function Component({ value, onChange }) {
   const [isActive, toggleActive] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
-    // update(comment);
     toggleActive(false);
   };
 
@@ -14,8 +12,8 @@ function Component({ update, children }) {
     <form onSubmit={e => handleSubmit(e)}>
       <textarea
         style={{ fontSize: fontSize, border: "1px solid black" }}
-        value={comment}
-        onChange={e => setComment(e.target.value)}
+        value={value}
+        onChange={e => onChange(e.target.value)}
       />
       <br />
       <button type="submit">保存</button>
@@ -25,7 +23,7 @@ function Component({ update, children }) {
       style={{ fontSize: fontSize, margin: 0 }}
       onClick={() => toggleActive(true)}
     >
-      {comment}
+      {value}
     </p>
   );
 }

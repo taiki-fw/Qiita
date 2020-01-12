@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 
-function Component({ update, children }) {
-  const [title, setTitle] = useState(children);
+function Component({ value, onChange }) {
   const [isActive, toggleActive] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
-    // update(title);
     toggleActive(false);
   };
 
@@ -15,8 +13,8 @@ function Component({ update, children }) {
       <input
         type="text"
         style={{ fontSize: fontSize }}
-        value={title}
-        onChange={e => setTitle(e.target.value)}
+        value={value}
+        onChange={e => onChange(e.target.value)}
       />
       <br />
       <button type="submit">保存</button>
@@ -26,7 +24,7 @@ function Component({ update, children }) {
       style={{ fontSize: fontSize, margin: 0 }}
       onClick={() => toggleActive(true)}
     >
-      {title}
+      {value}
     </h2>
   );
 }
