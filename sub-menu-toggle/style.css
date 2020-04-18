@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+}
+
+a {
+  color: blue;
+}
+
+header {
+  background-color: black;
+  padding: 5px 10px;
+}
+
+.menu__icon {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.menu__icon span {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.triangle3 {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid white;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 55px;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dropdown.active {
+  display: block;
+}
+
+.dropdown li + li {
+  border-top: 1px solid black;
+}
+
+.dropdown li a {
+  color: #555;
+  display: block;
+  text-decoration: none;
+  padding: 0.5em 1em;
+}
