@@ -37,6 +37,7 @@ header {
 .dropdown {
   display: none;
   position: absolute;
+  z-index: 3;
   top: 55px;
   border: 1px solid black;
   margin: 0;
@@ -57,4 +58,13 @@ header {
   display: block;
   text-decoration: none;
   padding: 0.5em 1em;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
 }
